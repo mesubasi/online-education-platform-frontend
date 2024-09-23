@@ -2,8 +2,7 @@
 
 import { Button, Form, Input, Carousel, message } from 'antd'
 import { Link } from 'react-router-dom'
-import AuthCarousel from '../../components/auth/AuthCarousel';
-import { useState } from 'react';
+import AuthCarousel from '../components/auth/AuthCarousel';
 
 const Register = () => {
 
@@ -12,7 +11,7 @@ const Register = () => {
             <div className='flex justify-between h-full'>
                 <div className='xl:px-20 px-10 w-full flex flex-col h-full justify-center relative'>
                     <h1 className='text-center text-5xl font-bold mb-2'>LOGO</h1>
-                    <Form layout='vertical' size='large' onFinish={onFinish}>
+                    <Form layout='vertical' size='large'>
                         <Form.Item label="User Name" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>

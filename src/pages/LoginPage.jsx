@@ -1,18 +1,19 @@
 //Login.jsx
 
 import { Button, Form, Input, Carousel, Checkbox, message } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
-import AuthCarousel from '../../components/auth/AuthCarousel';
+import { Link } from 'react-router-dom'
+import AuthCarousel from '../components/auth/AuthCarousel';
 import { useState } from 'react';
 
 const Login = () => {
+    const [loading, setLoading] = useState()
 
     return (
         <div className='h-screen'>
             <div className='flex justify-between h-full'>
                 <div className='xl:px-20 px-10 w-full flex flex-col h-full justify-center relative'>
                     <h1 className='text-center text-5xl font-bold mb-2'>LOGO</h1>
-                    <Form layout='vertical' size='large' onFinish={onFinish} initialValues={{ remember: false }}>
+                    <Form layout='vertical' size='large' initialValues={{ remember: false }}>
                         <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
