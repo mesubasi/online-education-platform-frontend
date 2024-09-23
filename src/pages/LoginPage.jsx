@@ -6,7 +6,7 @@ import AuthCarousel from '../components/auth/AuthCarousel';
 import { useState } from 'react';
 
 const Login = () => {
-    const [loading, setLoading] = useState()
+    const [loading, setLoading] = useState();
 
     return (
         <div className='h-screen'>

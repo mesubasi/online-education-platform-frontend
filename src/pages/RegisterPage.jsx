@@ -3,8 +3,10 @@
 import { Button, Form, Input, Carousel, message } from 'antd'
 import { Link } from 'react-router-dom'
 import AuthCarousel from '../components/auth/AuthCarousel';
+import { useState } from 'react';
 
 const Register = () => {
+    const [loading, setLoading] = useState();
 
     return (
         <div className='h-screen'>
