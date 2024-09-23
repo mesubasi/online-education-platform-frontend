@@ -4,6 +4,7 @@ import { Button, Form, Input, Carousel, Checkbox, message } from 'antd'
 import { Link } from 'react-router-dom'
 import AuthCarousel from '../components/auth/AuthCarousel';
 import { useState } from 'react';
+import Logo from "../../public/cap.png";
 
 const Login = () => {
     const [loading, setLoading] = useState();
@@ -12,7 +13,11 @@ const Login = () => {
         <div className='h-screen'>
             <div className='flex justify-between h-full'>
                 <div className='xl:px-20 px-10 w-full flex flex-col h-full justify-center relative'>
-                    <h1 className='text-center text-5xl font-bold mb-2'>LOGO</h1>
+                    <div className='flex justify-center items-center max-h-screen pb-5'>
+                        <div className='max-w-20'>
+                            <img src={Logo} className='w-full' />
+                        </div>
+                    </div>
                     <Form layout='vertical' size='large' initialValues={{ remember: false }}>
                         <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
