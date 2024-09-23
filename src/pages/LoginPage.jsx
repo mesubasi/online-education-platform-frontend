@@ -6,44 +6,6 @@ import AuthCarousel from '../../components/auth/AuthCarousel';
 import { useState } from 'react';
 
 const Login = () => {
-    const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
-
-    const onFinish = async (values) => {
-        setLoading(true);
-        try {
-            const res = await fetch(process.env.REACT_APP_SERVER_URL + "/api/auth/login", {
-                method: "POST",
-                body: JSON.stringify(values),
-                headers: { "Content-type": "application/json; charset=UTF-8" },
-            });
-
-            const data = await res.json();
-
-            if (res.status === 200) {
-
-                // Kullanıcı bilgilerini localStorage'a kaydet
-                localStorage.setItem(
-                    "posUser",
-                    JSON.stringify({
-                        accessToken: data.accessToken,
-                        email: data.email,
-                    })
-                );
-                message.success("Successfully Logged In!");
-                navigate("/");
-            } else if (res.status === 404) {
-                message.error("User Not Found!");
-            } else if (res.status === 403) {
-                message.error("Invalid Password!");
-            }
-            setLoading(false);
-        } catch (error) {
-            message.error("Oops. Something Went Wrong!");
-            console.log(error);
-            setLoading(false);
-        }
-    }
 
     return (
         <div className='h-screen'>
