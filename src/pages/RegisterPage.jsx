@@ -34,16 +34,16 @@ const Register = () => {
                             <Input.Password />
                         </Form.Item>
                         <Form.Item>
-                            <Button type='primary' htmlType='submit' className='w-full' size='large' loading={loading}>Register</Button>
+                            <Button type='primary' htmlType='submit' className='w-full bg-[#EC4837]' size='large' loading={loading}>Register</Button>
                         </Form.Item>
                     </Form>
-                    <div className='flex justify-center absolute left-0 bottom-10 w-full'>
+                    <div className='flex justify-center absolute left-0 bottom-10 w-full font-semibold'>
                         Do you have an account? &nbsp;
-                        <Link to="/login" className='text-blue-600'>
+                        <Link to="/login" className='text-[#EC4837]'>
                             Login Now</Link>
                     </div>
                 </div>
-                <div className='xl:w-4/6 lg:w-3/5 md:w-1/2 md:flex hidden bg-[#6c63ff]'>
+                <div className='xl:w-4/6 lg:w-3/5 md:w-1/2 md:flex hidden bg-[#EC4837]'>
                     <div className='w-full h-full flex items-center'>
                         <div className='w-full'>
                             <Carousel className='!h-full px-6' autoplay autoplaySpeed={3000}>
