@@ -53,7 +53,7 @@ const Login = () => {
                                 <AuthCarousel img="/images/responsive.svg" title="Responsive" desc="Compatibility with All Device Sizes" />
                                 <AuthCarousel img="/images/statistic.svg" title="Statistics" desc="Expanded Statistics" />
                                 <AuthCarousel img="/images/customer.svg" title="Student Satisfaction" desc="Students Satisfied with the Education at the End of the Experience" />
-                                <AuthCarousel img="/images/admin.svg" title="Admin Panel" desc="One-Stop Management" />
+                                <AuthCarousel img="/images/admin.svg" title="Panel" desc="One-Stop Management" />
                             </Carousel>
                         </div>
                     </div>

@@ -4,6 +4,8 @@ import { Button, Form, Input, Carousel, message } from 'antd'
 import { Link } from 'react-router-dom'
 import AuthCarousel from '../components/auth/AuthCarousel';
 import { useState } from 'react';
+import Logo from "../../public/cap.png";
+
 
 const Register = () => {
     const [loading, setLoading] = useState();
@@ -12,7 +14,11 @@ const Register = () => {
         <div className='h-screen'>
             <div className='flex justify-between h-full'>
                 <div className='xl:px-20 px-10 w-full flex flex-col h-full justify-center relative'>
-                    <h1 className='text-center text-5xl font-bold mb-2'>LOGO</h1>
+                    <div className='flex justify-center items-center max-h-screen pb-5'>
+                        <div className='max-w-20'>
+                            <img src={Logo} className='w-full' />
+                        </div>
+                    </div>
                     <Form layout='vertical' size='large'>
                         <Form.Item label="User Name" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
                             <Input />
@@ -49,8 +55,8 @@ const Register = () => {
                             <Carousel className='!h-full px-6' autoplay autoplaySpeed={3000}>
                                 <AuthCarousel img="/images/responsive.svg" title="Responsive" desc="Compatibility with All Device Sizes" />
                                 <AuthCarousel img="/images/statistic.svg" title="Statistics" desc="Expanded Statistics" />
-                                <AuthCarousel img="/images/customer.svg" title="Customer Satisfaction" desc="Customers Satisfied with the Product at the End of the Experience" />
-                                <AuthCarousel img="/images/admin.svg" title="Admin Panel" desc="One-Stop Management" />
+                                <AuthCarousel img="/images/customer.svg" title="Student Satisfaction" desc="Students Satisfied with the Education at the End of the Experience" />
+                                <AuthCarousel img="/images/admin.svg" title="Panel" desc="One-Stop Management" />
                             </Carousel>
                         </div>
                     </div>
