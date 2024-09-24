@@ -1,12 +1,13 @@
 //Login.jsx
 
 import { Button, Form, Input, Carousel, Checkbox, message } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthCarousel from '../../components/auth/AuthCarousel';
 import { useState } from 'react';
 import Logo from "../../public/cap.png";
 
 const Login = () => {
+    const navigate = useNavigate();
     const [loading, setLoading] = useState();
 
     return (
