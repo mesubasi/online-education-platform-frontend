@@ -1,13 +1,12 @@
-//Register.jsx
+//Login.jsx
 
-import { Button, Form, Input, Carousel, message } from 'antd'
+import { Button, Form, Input, Carousel, Checkbox, message } from 'antd'
 import { Link } from 'react-router-dom'
-import AuthCarousel from '../components/auth/AuthCarousel';
+import AuthCarousel from '../../components/auth/AuthCarousel';
 import { useState } from 'react';
 import Logo from "../../public/cap.png";
 
-
-const Register = () => {
+const Login = () => {
     const [loading, setLoading] = useState();
 
     return (
@@ -19,34 +18,32 @@ const Register = () => {
                             <img src={Logo} className='w-full' />
                         </div>
                     </div>
-                    <Form layout='vertical' size='large'>
-                        <Form.Item label="User Name" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
-                            <Input />
-                        </Form.Item>
+                    <Form layout='vertical' size='large' initialValues={{ remember: false }}>
                         <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
                         <Form.Item label="Password" name={"password"} rules={[{ required: true, message: "Password Cannot Be Blank!" }]}>
                             <Input.Password />
                         </Form.Item>
-                        <Form.Item label="Password Again" name={"passwordAgain"} dependencies={["password"]} rules={[{ required: true, message: "Password Again Cannot Be Blank!" }, ({ getFieldValue }) => ({
-                            validator(_, value) {
-                                if (!value || getFieldValue('password') === value) {
-                                    return Promise.resolve();
-                                }
-                                return Promise.reject(new Error("The password that you entered do not match!"));
-                            },
-                        }),]}>
-                            <Input.Password />
+                        <Form.Item name={"remember"} valuePropName='checked'>
+                            <div className='flex justify-between items-center'>
+                                <Checkbox>
+                                    Remember Me
+                                </Checkbox>
+                                <Link>
+                                    Forgot Password?
+                                </Link>
+                            </div>
                         </Form.Item>
                         <Form.Item>
-                            <Button type='primary' htmlType='submit' className='w-full bg-[#EC4837]' size='large' loading={loading}>Register</Button>
+                            <Button type='primary' htmlType='submit' className="w-full bg-[#EC4837]" size='large' loading={loading}>Sign In</Button>
                         </Form.Item>
                     </Form>
                     <div className='flex justify-center absolute left-0 bottom-10 w-full font-semibold'>
-                        Do you have an account? &nbsp;
-                        <Link to="/login" className='text-[#EC4837]'>
-                            Login Now</Link>
+                        Don't have an account yet? &nbsp;
+                        <Link to="/register" className='text-[#EC4837]'>
+                            Register Now
+                        </Link>
                     </div>
                 </div>
                 <div className='xl:w-4/6 lg:w-3/5 md:w-1/2 md:flex hidden bg-[#EC4837]'>
@@ -66,4 +63,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Login;
