@@ -4,7 +4,7 @@ import { Button, Form, Input, Carousel, message } from 'antd'
 import { Link } from 'react-router-dom'
 import AuthCarousel from '../../components/auth/AuthCarousel';
 import { useState } from 'react';
-import Logo from "../../public/cap.png";
+import Logo from "../../../public/cap.png";
 
 
 const Register = () => {
