@@ -31,6 +31,7 @@ const Login = () => {
             }
         } catch (err) {
             message.error("Oops. Something Went Wrong!");
+            console.log(err);
         } finally {
             setLoading(false);
         }
