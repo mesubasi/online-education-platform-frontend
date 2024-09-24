@@ -10,6 +10,25 @@ const Login = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState();
 
+    const onFinish = async (values) => {
+        try {
+            setLoading(true);
+            const res = await fetch(import.meta.env.REACT_APP_SERVER_URL + "/login", {
+                method: "POST",
+                body: JSON.stringify(values),
+                headers: { "Content-Type": "application/json; charset=UTF-8" }
+            });
+
+            const data = await res.json();
+            message.success("Successfully Logged In!");
+            navigate("/");
+        } catch (err) {
+            message.error("Oops. Something Went Wrong!");
+            setLoading(false);
+            console.log(err);
+        }
+    }
+
     return (
         <div className='h-screen'>
             <div className='flex justify-between h-full'>
@@ -19,7 +38,7 @@ const Login = () => {
                             <img src={Logo} className='w-full' />
                         </div>
                     </div>
-                    <Form layout='vertical' size='large' initialValues={{ remember: false }}>
+                    <Form layout='vertical' size='large' onFinish={onFinish} initialValues={{ remember: false }}>
                         <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
