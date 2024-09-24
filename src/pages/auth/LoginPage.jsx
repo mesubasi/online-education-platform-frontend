@@ -20,12 +20,19 @@ const Login = () => {
             });
 
             const data = await res.json();
-            message.success("Successfully Logged In!");
-            navigate("/");
+
+            if (res.status === 200) {
+                message.success("Successfully Logged In!");
+                navigate("/");
+            } else if (res.status === 403) {
+                message.error(data.error);
+            } else if (res.status === 404) {
+                message.error(data.error);
+            }
         } catch (err) {
             message.error("Oops. Something Went Wrong!");
+        } finally {
             setLoading(false);
-            console.log(err);
         }
     }
 
