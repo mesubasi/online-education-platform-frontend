@@ -13,7 +13,7 @@ const Login = () => {
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            const res = await fetch(import.meta.env.REACT_APP_SERVER_URL + "/login", {
+            const res = await fetch(process.env.REACT_APP_SERVER_URL + "/login", {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: { "Content-Type": "application/json; charset=UTF-8" }
