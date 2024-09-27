@@ -20,11 +20,12 @@ const Register = () => {
                 headers: { "Content-Type": "application/json; charset=UTF-8" }
             });
 
+            const data = await res.json();
+
             if (res.status === 200) {
-                message.success("Successfully Registered!");
+                message.success(data.success);
                 navigate("/login");
             }
-            console.log(values);
 
 
         } catch (err) {
