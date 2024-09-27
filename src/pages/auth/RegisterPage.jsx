@@ -11,6 +11,18 @@ const Register = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState();
 
+    const onFinish = async (values) => {
+        try {
+            setLoading(true);
+
+        } catch (err) {
+            message.error("Oops. Something Went Wrong!");
+            console.log(err);
+        } finally {
+            setLoading(false);
+        }
+    }
+
 
     return (
         <div className='h-screen'>
