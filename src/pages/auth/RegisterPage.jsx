@@ -22,6 +22,11 @@ const Register = () => {
 
             const data = await res.json();
 
+            if (res.status === 200) {
+                message.success("Successfully Registered!");
+                navigate("/login");
+            }
+            console.log(values);
 
 
         } catch (err) {
@@ -42,7 +47,7 @@ const Register = () => {
                             <img src={Logo} className='w-full' />
                         </div>
                     </div>
-                    <Form layout='vertical' size='large'>
+                    <Form layout='vertical' size='large' onFinish={onFinish}>
                         <Form.Item label="User Name" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
