@@ -12,15 +12,13 @@ const Register = () => {
     const [loading, setLoading] = useState();
 
     const onFinish = async (values) => {
+        setLoading(true);
         try {
-            setLoading(true);
             const res = await fetch(process.env.REACT_APP_SERVER_URL + "/register", {
                 method: "POST",
                 body: JSON.stringify(values),
-                heaers: { "Content-Type": "application/json; charset=UTF-8" }
+                headers: { "Content-Type": "application/json; charset=UTF-8" }
             });
-
-            const data = await res.json();
 
             if (res.status === 200) {
                 message.success("Successfully Registered!");
