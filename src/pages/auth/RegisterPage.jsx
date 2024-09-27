@@ -14,6 +14,15 @@ const Register = () => {
     const onFinish = async (values) => {
         try {
             setLoading(true);
+            const res = await fetch(process.env.REACT_APP_SERVER_URL + "/register", {
+                method: "POST",
+                body: JSON.stringify(values),
+                heaers: { "Content-Type": "application/json; charset=UTF-8" }
+            });
+
+            const data = await res.json();
+
+
 
         } catch (err) {
             message.error("Oops. Something Went Wrong!");
