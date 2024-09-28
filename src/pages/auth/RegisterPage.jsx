@@ -49,7 +49,7 @@ const Register = () => {
                         </div>
                     </div>
                     <Form layout='vertical' size='large' onFinish={onFinish}>
-                        <Form.Item label="User Name" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
+                        <Form.Item label="Username" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
                         <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
