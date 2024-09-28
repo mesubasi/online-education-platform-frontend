@@ -24,7 +24,9 @@ const Register = () => {
 
             if (res.status === 200) {
                 message.success(data.success);
-                navigate("/login");
+                setTimeout(() => {
+                    navigate("/login");
+                }, 3000);
             }
 
 
