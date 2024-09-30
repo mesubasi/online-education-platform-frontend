@@ -49,16 +49,16 @@ const Register = () => {
                         </div>
                     </div>
                     <Form layout='vertical' size='large' onFinish={onFinish}>
-                        <Form.Item label="Username" name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
+                        <Form.Item label="Username" className='font-semibold' name={"username"} rules={[{ required: true, message: "Username Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
+                        <Form.Item label="Email" className='font-semibold' name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item label="Password" name={"password"} rules={[{ required: true, message: "Password Cannot Be Blank!" }]}>
+                        <Form.Item label="Password" className='font-semibold' name={"password"} rules={[{ required: true, message: "Password Cannot Be Blank!" }]}>
                             <Input.Password />
                         </Form.Item>
-                        <Form.Item label="Password Again" name={"passwordAgain"} dependencies={["password"]} rules={[{ required: true, message: "Password Again Cannot Be Blank!" }, ({ getFieldValue }) => ({
+                        <Form.Item label="Password Again" className='font-semibold' name={"passwordAgain"} dependencies={["password"]} rules={[{ required: true, message: "Password Again Cannot Be Blank!" }, ({ getFieldValue }) => ({
                             validator(_, value) {
                                 if (!value || getFieldValue('password') === value) {
                                     return Promise.resolve();

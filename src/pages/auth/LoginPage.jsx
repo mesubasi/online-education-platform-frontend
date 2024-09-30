@@ -47,10 +47,10 @@ const Login = () => {
                         </div>
                     </div>
                     <Form layout='vertical' size='large' onFinish={onFinish} initialValues={{ remember: false }}>
-                        <Form.Item label="Email" name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
+                        <Form.Item label="Email" className='font-semibold' name={"email"} rules={[{ required: true, message: "Email Cannot Be Blank!" }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item label="Password" name={"password"} rules={[{ required: true, message: "Password Cannot Be Blank!" }]}>
+                        <Form.Item label="Password" className='font-semibold' name={"password"} rules={[{ required: true, message: "Password Cannot Be Blank!" }]}>
                             <Input.Password />
                         </Form.Item>
                         <Form.Item name={"remember"} valuePropName='checked'>
@@ -58,7 +58,7 @@ const Login = () => {
                                 <Checkbox>
                                     Remember Me
                                 </Checkbox>
-                                <Link>
+                                <Link >
                                     Forgot Password?
                                 </Link>
                             </div>
